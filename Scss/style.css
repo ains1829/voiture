@@ -6,6 +6,7 @@
   --blue: rgb(48, 176, 255) ;
   --white: rgb(237, 237, 237) ;
   --whiting: white;
+  --purple:rgb(83 129 225);
 }
 
 body {
@@ -66,6 +67,12 @@ header .nameuser {
   margin-left: auto;
   margin-right: auto;
   box-shadow: 0px 0px 1px 0px var(--blue);
+  animation: animations 1s ease-in;
+}
+.login form img {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
 }
 .login form div {
   display: flex;
@@ -76,7 +83,6 @@ header .nameuser {
 .login form div label {
   font-family: "poppins";
   font-size: 13px;
-  font-weight: bold;
   padding-bottom: 5px;
 }
 .login form div input {
@@ -92,12 +98,43 @@ header .nameuser {
   width: 98%;
   margin-top: 10px;
   padding: 15px;
-  background: var(--blue);
+  background: var(--purple);
   color: white;
   font-weight: bold;
 }
 .login form div figcaption {
   font-size: 12px;
   margin-top: 10px;
-  color: var(--blue);
+  color: var(--purple);
+}
+.login form .google {
+  display: flex !important;
+  flex-direction: row;
+  font-size: 13px;
+  align-items: center;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid gray;
+  transition: 0.2s;
+}
+.login form .google span {
+  transform: translateX(-60px);
+}
+.login form .google img {
+  width: 25px;
+  height: 25px;
+}
+.login form .google:hover {
+  cursor: pointer;
+  background: rgba(205, 205, 205, 0.311);
+  border: none;
+  color: rgb(0, 0, 0);
+}
+@keyframes animations {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }/*# sourceMappingURL=style.css.map */
