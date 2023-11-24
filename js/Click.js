@@ -1,21 +1,32 @@
-const contentmatricule = document.querySelectorAll('.content-matricule');
-contentmatricule.forEach(elementofmatricule => {
-    elementofmatricule.addEventListener('click', function(){
-        alert('matricule clicked')
-        // const matricule = elementofmatricule.querySelector('.matricule').innerText;
-        // const xhr = new XMLHttpRequest();
-        // xhr.onreadystatechange = function() {
-        //     if (xhr.readyState == 4 && xhr.status == 200) {
-        //         const data = JSON.parse(xhr.responseText);
-        //         console.log(xhr.responseText)
-        //         // data.forEach(element => {
-        //         //     if(element.matricule == matricule){
-        //         //         content(element)
-        //         //     }
-        //         // });
-        //     }
-        // }
-        // xhr.open('GET','http://localhost:8080/vehicule/getvehiculebymatricule/'+matricule,true)
-        // xhr.send(null)
-    })
+import { Kilometrage } from "./Kilometrage.js";
+const kilometrage = Kilometrage 
+function getdonnee(){
+return new Promise((resolve, reject) => {
+    const intervalId = setInterval(() => {
+        const elements = document.querySelectorAll('.content-matricule');
+        if (elements.length > 0) {
+            clearInterval(intervalId);
+            resolve(elements);
+        }
+    }, 100);
 })
+}
+getdonnee()
+    .then((elements)=>{
+        return elements ;
+    })
+    .catch(console.error)
+function localStorages(key , valeur){
+    localStorage.setItem(key , valeur)
+}
+const getAllnodes = await getdonnee() ;
+getAllnodes.forEach(element => {
+    element.addEventListener( 'click', async function(){
+        const matricule = element.querySelector('.matricule').innerText ;
+        const kilometrageMatricule = await kilometrage.getKimotrageByvehicule(matricule) ; 
+        localStorages('matricule', matricule);
+        console.log( JSON.stringify(kilometrageMatricule))
+        localStorages('detailKilometrage' , JSON.stringify(kilometrageMatricule));
+        // window.location.replace('./detail.html');
+    })
+});

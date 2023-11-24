@@ -43,10 +43,12 @@ header .nameuser img {
   padding: 40px;
   background: var(--blue);
   width: 80%;
+  margin-left: 40px;
   margin-top: 20px;
+  cursor: pointer;
 }
 .content-about .content-matricule .matricule {
-  font-size: 30px;
+  font-size: 50px;
   color: var(--white);
 }
 .content-about .content-matricule figcaption {
@@ -74,7 +76,7 @@ header .nameuser img {
   margin-left: auto;
   margin-right: auto;
   box-shadow: 0px 0px 1px 0px var(--blue);
-  animation: animations 1s ease-in;
+  animation: animations 0.5s ease-in-out;
 }
 .login form img {
   display: flex;
