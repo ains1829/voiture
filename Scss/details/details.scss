@@ -1,0 +1,20 @@
+@font-face {
+    font-family: "poppins";
+    src: url("../font/Poppins-Light.ttf");
+}
+:root{
+    --blue : rgb(48, 176, 255) ;
+    --white : rgb(237, 237, 237) ;
+    --whiting : white;
+    --purple :rgb(83 129 225);
+}
+body{
+    font-family: "poppins";
+}
+.details{
+    display: flex;
+    .detail-vehicule{
+        display: flex;
+        flex-direction: column;
+    }
+}

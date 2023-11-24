@@ -4,7 +4,7 @@
 }
 :root {
   --blue: rgb(48, 176, 255) ;
-  --white: rgb(237, 237, 237) ;
+  --white: rgb(245, 245, 245) ;
   --whiting: white;
   --purple:rgb(83 129 225);
 }
@@ -106,10 +106,13 @@ header .nameuser img {
   font-family: "poppins";
   width: 98%;
   margin-top: 10px;
+  font-size: 14px;
   padding: 15px;
-  background: var(--purple);
+  background: rgb(83, 95, 225);
   color: white;
+  border-radius: 30px;
   font-weight: bold;
+  cursor: pointer;
 }
 .login form div figcaption {
   font-size: 12px;
